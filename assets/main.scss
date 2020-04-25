@@ -1,7 +1,69 @@
-  $body-color: red;
+$accent-color: #fe346e;
+$stand-color: #512b58;
+$primary-color: #d2fafb;
+$bg-color: #2c003e;
 
-  body {
-    color: $body-color;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-  }
+/* Open Sans Light */
+@font-face {
+    font-family: "Open Sans";
+    src: local('Open Sans Light'), local('OpenSans-Light'), url("fonts/opensans/OpenSans-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+/* Open Sans Light Italic */
+@font-face {
+    font-family: "Open Sans";
+    src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"), url("fonts/opensans/OpenSans-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+/* Open Sans Bold */
+@font-face {
+    font-family: "Open Sans";
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url("fonts/opensans/OpenSans-Italic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $bg-color;
+    color: $primary-color;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 1.4rem;
+}
+
+.container {
+    max-width: 120rem;
+    width: 100%;
+    padding: 3.0rem;
+    margin: 0 auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    align-items: start;
+    grid-gap: 3.0rem;
+
+    .column-1,
+    .column-2 {
+    }
+    .column-2 {
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+        animation-duration: 0.001s !important;
+        transition-duration: 0.001s !important;
+    }
+}
