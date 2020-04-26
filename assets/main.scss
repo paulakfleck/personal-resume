@@ -7,23 +7,23 @@ $base-fontsize: 1.3rem;
 /* Open Sans Light */
 @font-face {
     font-family: "Open Sans";
-    src: local('Open Sans Light'), local('OpenSans-Light'), url("fonts/opensans/OpenSans-Light.ttf") format("truetype");
     font-style: normal;
     font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url("fonts/opensans/OpenSans-Light.ttf") format("truetype");
 }
 /* Open Sans Light Italic */
 @font-face {
     font-family: "Open Sans";
-    src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"), url("fonts/opensans/OpenSans-Italic.ttf") format("truetype");
     font-style: italic;
     font-weight: 300;
+    src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"), url("fonts/opensans/OpenSans-Italic.ttf") format("truetype");
 }
 /* Open Sans Bold */
 @font-face {
     font-family: "Open Sans";
-    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url("fonts/opensans/OpenSans-SemiBold.ttf") format("truetype");
     font-style: normal;
     font-weight: 600;
+    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url("fonts/opensans/OpenSans-SemiBold.ttf") format("truetype");
 }
 
 :root {
@@ -34,53 +34,145 @@ body {
     background-color: $bg-color;
     color: $primary-color;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    line-height: calc(#{$base-fontsize} + ( #{$base-fontsize} / 2));
     font-size: $base-fontsize;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(#{$base-fontsize} + ( #{$base-fontsize} / 2));
 
     & > header {
         h2 {
-            font-weight: 300;
             font-size: 1.6rem;
+            font-weight: 300;
+            margin: 0 0 2rem 0;
+        }
+
+        p {
+            max-width: 70%;
         }
     }
 } 
 
 h1 {
-    font-size: 2.2rem;
     color: $accent-color;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 600;
+    margin: 0 0 1rem 0;
     text-transform: uppercase;
 }
 
 .container {
-    max-width: 120rem;
-    width: 100%;
-    padding: 3.0rem;
     margin: 0 auto;
+    max-width: 120rem;
+    padding: 3.0rem;
+    width: 100%;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(min-content, max-content);
     align-items: start;
+    display: grid;
+    grid-auto-rows: minmax(min-content, max-content);
     grid-gap: 3.0rem;
+    grid-template-columns: 1fr 1fr;
 
-    .column-1,
-    .column-2 {
+    h2 {
+        color: $accent-color;
+        font-size: 1.6rem;
+        margin: 0 0 1.4rem 0;
+        text-transform: uppercase;
     }
-    .column-2 {
+
+    & > .column-1 > section {
+        margin: 0 0 3rem 0;
+    }
+
+    #professional-experience,
+    #education {
+        & > article {
+            border-left: solid 2px $primary-color;
+            padding: 0 0 3rem 1.4rem;
+
+            & > header {
+                position: relative;
+                margin: 0 0 1rem 0;
+
+                h3 {
+                    font-size: $base-fontsize;;
+                    position: relative;
+                    color: $accent-color;
+                    font-weight: 300;
+
+                    &:before {
+                        content: '';
+                        background-color: $bg-color;
+                        border: 2px solid #d2fafb;
+                        border-radius: 50%;
+                        height: 1rem;
+                        left: -22px;
+                        position: absolute;
+                        top: 3px;
+                        width: 1rem;
+                    }
+                }
+
+                span {
+                    color: $stand-color;
+                    font-weight: 600;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            h4 {
+                font-weight: 300;
+                margin: 0 0 1rem 0;
+            }
+
+            ul > li {
+                background-image: linear-gradient(to right, $stand-color 40%, rgba(255, 255, 255, 0) 0%);
+                background-position: bottom;
+                background-repeat: repeat-x;
+                background-size: 10px 1px;
+                margin: 0 0 2rem 0;
+                padding: 0 0 2rem 0;
+
+                &:last-child {
+                    background: none;
+                }
+
+                section.side-project {
+                    margin: 2rem 0 0 1rem;
+                    padding: 0 0 0 1rem;
+                    border-left: 0.5rem solid $stand-color;
+
+                    h5 {
+                        font-size: $base-fontsize;
+                        font-weight: 300;
+                        margin: 0 0 1rem 0;
+                    }
+                }
+                
+            }
+        }
     }
 }
 
+a {
+    color: $accent-color;
+    text-decoration: underline;
+}
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* If the device has any configuration related to avoid motion sickness */
 @media (prefers-reduced-motion: reduce) {
-*,
-*::before,
-*::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.001s !important;
         transition-duration: 0.001s !important;
     }
