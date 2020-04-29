@@ -1,8 +1,13 @@
-$accent-color: #fe346e;
-$stand-color: #512b58;
-$primary-color: #d2fafb;
-$bg-color: #2c003e;
-$base-fontsize: 1.3rem;
+$accent-color: #f2a365;
+$stand-color: #30475e;
+$primary-color: #ececec;
+$bg-color: #222831;
+
+// $accent-color: #fe346e;
+// $stand-color: #512b58;
+// $primary-color: #d2fafb;
+// $bg-color: #2c003e;
+$base-fontsize: 1.4rem;
 
 /* Open Sans Light */
 @font-face {
@@ -32,6 +37,7 @@ $base-fontsize: 1.3rem;
 
 body {
     background-color: $bg-color;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAD+0lEQVRYR33YUW7jMAyEYfuhJ0rPlJ4pPVN6piwo4DP+CMEWWNRrSRQ5HA7pnq/X6+s4juPn5+e43W7H7+/v+j3//v7+jvv9fr2b/3s/v+fMrHt+Pp/rTO2wN/tmbX7sZ2u9PI7jvN/vXzbOQQ7M4uPxOL6/v9e71+u1nuedn9nP2To96y72PI4K2h17sMsZlzo4huefyF26IzDrnJs9AjjPczk/65CZNShyyj2zf5w9b7fbl7SAcDweI6JhcIy7EIpQmjOzf947KwipQ4WiOHsmoFlbyJQnRclFNhdyDgtAQJPKcQpqdbpoz3P5M/aWMwyNAdE1BSWcqMA+RmbvpAUq47y0caABIficmfP4dR7HsTjTKkBo3rtQJLN/DJbQn5xqBZWPUrMT/aqmWZAu3pacrQDG9ooZB5F0HOU8nnEY+gBAh/PxeKzSHqhnEZyg7EGHXSoAjtKN6o+0CoDdnsWx5Uz1YjatMjvPFWWjxy0IjuOzD0eKjHJt9DiJ/LverDRBpGkqb0qyEthFdboq6xwycxZy0LmQGQLPJtVRkZKyQj3PCD+8KFqVAo4ItA4r97aNOXs+n8/lDLg5ZiMj1RXVpJSRtsjiTwWwOlWO4tNypkpZfSkxq8IQq+KqPJpUrhUVZyE26EL7Ej39Qv4Yq5pS1zovWiSuhggMR6pl5elbaTcFuvOe//Km6qt9dBzAKXYhiMBFGedm7znzjAbWMiyROUa85HsuocJ7B28bgHLbjUrqaHLpTHuHNiAdSP2/pmevwCBVDbK2V+5F4CKz60HVUo5Bvze+ordPetoCG1Ap0nP31ShBiJAcUyV7UxzD0vSpTdQBmqPSqlW95xquKs0gb1dFtPYxkxpnlGm512eI4VCJvrSuCiyXrZZ53i/paIEbgmmTlA5O7Je3q19p2sdL0EmFQ3tP6WUt27aROtuUaCUkYzVdA3m7r869y/snCZdKw5ZBXAAtCsFVNtrfVmkjmDKsOoK2RlsNKgLBq7LW2B8UZp8RdR/QF4ERkY6UzLvgmeBUmVKXDrCzAQVtBd8g57tspWkaJah5LiJduR9gkNoFbHdCEO3eKnLWKo6QvpDxooQqRz6NFO1LdaazM6f29qB9NAtv303GzcnpELo/eohxwJxSorY/NQ37QMaWACH/NgP7YtznlLKfE/s3lv7lbFNfETWGVLWlbKWpsIIe0XpptWSvqDGurJvS7sOfkp12LQL7k8heFR0/eQ6hTnVzruUqtW0DEP/krI695pn+FaLfSBBqiwB3f3ddlC1fjuyjhLvaIq6xswKE+cgKJSW5v2/+PfcbqWNnz5IOjq40UddOfP4K1dLUMjoSFOYO3m2CWgVSd7qr+v8DgkMe9PKcRQcAAAAASUVORK5CYII=');
     color: $primary-color;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: $base-fontsize;
@@ -72,7 +78,7 @@ main {
     align-items: start;
     display: grid;
     grid-auto-rows: minmax(min-content, max-content);
-    grid-gap: 3.0rem;
+    grid-gap: 8.0rem;
     grid-template-columns: 1fr 1fr;
 
     h2 {
@@ -105,13 +111,13 @@ main {
                     &:before {
                         content: '';
                         background-color: $bg-color;
-                        border: 2px solid #d2fafb;
+                        border: 2px solid $primary-color;
                         border-radius: 50%;
-                        height: 1rem;
-                        left: -22px;
+                        height: 0.8rem;
+                        left: -2.1rem;
                         position: absolute;
-                        top: 3px;
-                        width: 1rem;
+                        top: 0.5rem;
+                        width: 0.8rem;
                     }
                 }
 
@@ -127,6 +133,12 @@ main {
             h4 {
                 font-weight: 300;
                 margin: 0 0 1rem 0;
+            }
+
+            h5 {
+                font-weight: 300;
+                font-style: italic;
+                font-size: 1.2rem;
             }
 
             ul > li {
@@ -148,7 +160,7 @@ main {
 
                     h5 {
                         font-size: $base-fontsize;
-                        font-weight: 300;
+                        font-style: normal;
                         margin: 0 0 1rem 0;
                     }
                 }
@@ -166,6 +178,33 @@ a {
 ul {
     list-style: none;
     padding: 0;
+}
+
+svg#icon-award {
+    fill: $accent-color;
+    height: 2.2rem;
+    width: 2.2rem;
+    display: inline-block;
+    margin: 0 0.5rem -0.5rem 0;
+}
+
+.read-more {
+    max-height: 9rem;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+        background-image: linear-gradient(
+            rgba($bg-color, 0) 0%,
+            rgba($bg-color, 0.9) 90%
+        );  
+        bottom: 0em;
+        content: '';
+        height: 4em;
+        left: 0;
+        position: absolute; 
+        width:100%;
+    }
 }
 
 /* If the device has any configuration related to avoid motion sickness */
