@@ -3,10 +3,7 @@ $stand-color: #30475e;
 $primary-color: #ececec;
 $bg-color: #222831;
 
-// $accent-color: #fe346e;
-// $stand-color: #512b58;
-// $primary-color: #d2fafb;
-// $bg-color: #2c003e;
+
 $base-fontsize: 1.4rem;
 
 /* Open Sans Light */
@@ -188,15 +185,19 @@ svg#icon-award {
     margin: 0 0.5rem -0.5rem 0;
 }
 
+.read-more-btn {
+    font-size: 1.2rem;
+}
+
 .read-more {
-    max-height: 9rem;
+    // max-height: 9rem;
     overflow: hidden;
     position: relative;
 
     &:after {
         background-image: linear-gradient(
             rgba($bg-color, 0) 0%,
-            rgba($bg-color, 0.9) 90%
+            rgba($bg-color, 0.8) 100%
         );  
         bottom: 0em;
         content: '';
