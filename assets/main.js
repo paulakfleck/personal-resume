@@ -18,3 +18,7 @@ const init = () => {
 }
 
 init();
+
+
+const hey = 'Heyyy';
+console.log(`${hey} webpack funcionando!`);

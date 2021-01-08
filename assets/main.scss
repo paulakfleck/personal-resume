@@ -81,7 +81,7 @@ body {
 }
 
 main {
-    align-items: start;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     grid-gap: 0;
@@ -91,6 +91,11 @@ main {
         font-size: calc(#{$base-fontsize} * 1.2);
         margin: 0 0 1.4rem 0;
         text-transform: uppercase;
+    }
+
+    .column-1,
+    .column-2 {
+        width: 100%;
     }
 
     & > .column-1 > section {
