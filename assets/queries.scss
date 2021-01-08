@@ -1,0 +1,30 @@
+@media screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-auto-rows: minmax(min-content, max-content);
+        grid-gap: 4rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+ 
+@media screen and (min-width: 1024px) {
+    main {
+        grid-gap: 8rem;
+    }
+    main #education>article>header span,
+    main #professional-experience>article>header span {
+        position: absolute;
+    }
+}
+
+
+
+/* If the device has any configuration related to avoid motion sickness */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001s !important;
+        transition-duration: 0.001s !important;
+    }
+}
