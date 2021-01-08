@@ -1,5 +1,5 @@
 $accent-color: #f2a365;
-$stand-color: #30475e;
+$stand-color: #2b4b6b;
 $primary-color: #ececec;
 $bg-color: #222831;
 
@@ -43,25 +43,34 @@ body {
     line-height: calc(#{$base-fontsize} + ( #{$base-fontsize} / 2));
 
     & > header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            color: $accent-color;
+            font-size:  calc(#{$base-fontsize} * 1.6);
+            font-style: normal;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+        }
+
         h2 {
-            font-size: 1.6rem;
+            font-size:  calc(#{$base-fontsize} * 1.1);
             font-weight: 300;
+            font-style: italic;
             margin: 0 0 2rem 0;
         }
-
-        p {
-            max-width: 70%;
+        div {
+            width: 70%;
         }
-    }
-} 
 
-h1 {
-    color: $accent-color;
-    font-size: 2.2rem;
-    font-style: normal;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    text-transform: uppercase;
+        img {
+            border-radius: 50%;
+        }
+        
+    }
 }
 
 .container {
@@ -73,14 +82,13 @@ h1 {
 
 main {
     align-items: start;
-    display: grid;
-    grid-auto-rows: minmax(min-content, max-content);
-    grid-gap: 8.0rem;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0;
 
     h2 {
         color: $accent-color;
-        font-size: 1.6rem;
+        font-size: calc(#{$base-fontsize} * 1.2);
         margin: 0 0 1.4rem 0;
         text-transform: uppercase;
     }
@@ -89,22 +97,33 @@ main {
         margin: 0 0 3rem 0;
     }
 
+    #summary {
+        a {
+            margin: 1rem 0 0 0;
+            display: inline-block;
+        }
+    }
+
     #professional-experience,
     #education {
         & > article {
             border-left: solid 2px $primary-color;
-            padding: 0 0 3rem 1.4rem;
+            padding: 0 0 5rem 1.4rem;
+
+            &:last-child {
+                padding-bottom: 1rem;
+            }
 
             & > header {
                 position: relative;
                 margin: 0 0 1rem 0;
 
                 h3 {
-                    font-size: $base-fontsize;;
+                    font-size: $base-fontsize;
                     position: relative;
                     color: $accent-color;
                     font-weight: 300;
-
+                    
                     &:before {
                         content: '';
                         background-color: $bg-color;
@@ -116,12 +135,21 @@ main {
                         top: 0.5rem;
                         width: 0.8rem;
                     }
+                    
+                    b {
+                        font-weight: bold;
+                    }
+
+                    svg {
+                        fill: $accent-color;
+                        margin: 0 0.5rem 0 0;
+                    }
                 }
 
                 span {
                     color: $stand-color;
                     font-weight: 600;
-                    position: absolute;
+                    position: relative;
                     right: 0;
                     top: 0;
                 }
@@ -130,12 +158,13 @@ main {
             h4 {
                 font-weight: 300;
                 margin: 0 0 1rem 0;
+                font-style: italic;
             }
 
             h5 {
                 font-weight: 300;
                 font-style: italic;
-                font-size: 1.2rem;
+                font-size: calc(#{$base-fontsize} * 0.85);
             }
 
             ul > li {
@@ -145,9 +174,11 @@ main {
                 background-size: 10px 1px;
                 margin: 0 0 2rem 0;
                 padding: 0 0 2rem 0;
-
+                
                 &:last-child {
                     background: none;
+                    margin: 0;
+                    padding: 0;
                 }
 
                 section.side-project {
@@ -165,11 +196,18 @@ main {
             }
         }
     }
+
+    #education {
+        & > article h4 {
+            font-style: normal;
+        }
+    }
 }
 
 a {
     color: $accent-color;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: solid 1px;
 }
 
 ul {
@@ -177,22 +215,15 @@ ul {
     padding: 0;
 }
 
-svg#icon-award {
-    fill: $accent-color;
-    height: 2.2rem;
-    width: 2.2rem;
-    display: inline-block;
-    margin: 0 0.5rem -0.5rem 0;
-}
-
 .read-more-btn {
-    font-size: 1.2rem;
+    font-size: calc(#{$base-fontsize} * 0.85);
 }
 
 .read-more {
-    // max-height: 9rem;
+    max-height: 18rem;
     overflow: hidden;
     position: relative;
+    transition: all ease-in-out 300ms;
 
     &:after {
         background-image: linear-gradient(
@@ -206,14 +237,28 @@ svg#icon-award {
         position: absolute; 
         width:100%;
     }
+
+    &.open {
+        max-height: 100rem;
+
+        &::after {
+            opacity: 0;
+        }
+    }
 }
 
-/* If the device has any configuration related to avoid motion sickness */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.001s !important;
-        transition-duration: 0.001s !important;
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    font-size: calc(#{$base-fontsize} * 0.85);
+    padding: 1rem 0;
+
+    svg {
+        fill: $accent-color;
+        margin: 0 1rem;
     }
 }
