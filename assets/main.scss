@@ -1,5 +1,5 @@
 $accent-color: #f2a365;
-$stand-color: #2b4b6b;
+$stand-color: #366ea7;
 $primary-color: #ececec;
 $bg-color: #222831;
 
@@ -221,7 +221,9 @@ ul {
 }
 
 .read-more-btn {
+    display: inline-block;
     font-size: calc(#{$base-fontsize} * 0.85);
+    margin-top: 1rem;
 }
 
 .read-more {
