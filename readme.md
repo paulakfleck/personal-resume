@@ -1,1 +1,0 @@
-### You can check my resume URL [here](https://paulakfleck.github.io/personal-resume/).
