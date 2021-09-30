@@ -7,7 +7,7 @@ module.exports = {
     mode: "production",
     optimization: {
         minimize: true,
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new OptimizeCSSAssetsPlugin({})],
     },
     module: {
         rules: [
@@ -32,11 +32,7 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/
-            },
+            }
         ],
     },
     plugins: [
