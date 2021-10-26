@@ -10,7 +10,7 @@
         main {
             display: grid;
             grid-auto-rows: minmax(min-content, max-content);
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.8fr 1.2fr;
             grid-template-rows: 1fr;
             grid-gap: 4rem;
         }
